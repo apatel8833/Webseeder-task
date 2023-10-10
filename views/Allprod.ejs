@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            position: relative; 
+            height: 100%;
+            width: 100%;
+            display: flex;
+            gap: 20px;
+
+        }
+        .cart
+        {
+            position: relative;
+            height: 300px;
+            width: 200px;
+            border: 1px solid black;
+        }
+        .btns{
+            display: flex;
+            gap: 10px;
+        }
+        a{
+            text-decoration: none;
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .btns>a:nth-child(1){
+            background-color: red;
+            color: white;
+        }
+        .btns>a:nth-child(2){
+            background-color: rgb(255, 130, 130);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Products..</h1>
+    <div class="card" >
+        <% allprod.forEach(function(prod){%>
+            <div class="cart" >
+                <h1><%=prod.productName%></h1>
+                <h1 style="color: green;"><%=prod.price%></h1>
+                <h1><%=prod.company%></h1>
+                <div class="btns">
+                    <a href="/Delete/<%=prod._id%>">Delete</a>
+                    <br>
+                    <a href="/Edit/<%=prod._id%>">Edit</a>
+                </div>
+    
+            </div>
+        <%})%>
+    </div>
+</body>
+</html>
